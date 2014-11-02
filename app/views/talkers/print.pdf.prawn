@@ -1,13 +1,5 @@
 prawn_document() do |pdf|
 
-  pdf.font_families.update("Cheboygan" => {
-    :normal => "#{Rails.root.join('app/assets/fonts/Cheboyga.ttf')}"
-  }
-  )
-  pdf.font_families.update("Hypatia" => {
-    :normal => "#{Rails.root.join('app/assets/fonts/hypatiasanspro-regular.ttf')}"
-  }
-  )
   @@inches = 72
   @talkerwidth = 3 * @@inches
   @talkerheight = 2.7 * @@inches
@@ -32,17 +24,17 @@ prawn_document() do |pdf|
       @talker_y = pdf.bounds.top
     end
     pdf.bounding_box([@talker_x, @talker_y], :width => @talkerwidth, :height => @talkerheight) do
-      pdf.font("Cheboygan", :size => @base * 1)
+      pdf.font(:size => @base * 1)
       pdf.text_box talker.producer, 
         :width => @talkerwidth - @pad*2, :align => :center, :valign => :center, :height => @producerheight,
         :overflow => :shrink_to_fit,
         :at => [@pad, pdf.bounds.top - (@fold + @pad)]
-      pdf.font("Cheboygan", :size => @base * 1.3)
+      pdf.font(:size => @base * 1.3)
       pdf.text_box talker.product, 
         :width => @talkerwidth - @pad*2, :align => :center, :valign => :center, :height => @productheight,
         :overflow => :shrink_to_fit,
         :at => [@pad, pdf.bounds.top - (@fold + @pad) - @producerheight]
-      pdf.font("Hypatia", :size => @base * 0.8)
+      pdf.font(:size => @base * 0.8)
       pdf.text_box talker.blurb, 
         :width => @talkerwidth - @pad*2, :align => :center, :valign => :center, :height => @blurbheight,
         :overflow => :shrink_to_fit,

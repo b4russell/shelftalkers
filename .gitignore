@@ -17,3 +17,6 @@
 /tmp
 constants.rb
 index.html
+
+# Ignore fonts
+/app/assets/fonts
