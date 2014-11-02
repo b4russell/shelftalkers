@@ -1,0 +1,10 @@
+x Add favicon
+Add last modified header
+x Make "Show, Add, Delete, New talker" invisible for un-logged-in user.
+x Create a partial (footer?) that only appears for logged in users?
+Use gmail authentication?
+check for duplicates
+fix delete for multi-user scenario
+make sure hidden Edit appears on mobile after heroku push
+get tests up and running!!!
+add a Preview talker link to the New/Edit page

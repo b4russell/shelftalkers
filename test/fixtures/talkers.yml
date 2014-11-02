@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  producer: MyString
+  product: MyString
+  blurb: MyText
+
+two:
+  producer: MyString
+  product: MyString
+  blurb: MyText

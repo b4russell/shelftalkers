@@ -1,0 +1,31 @@
+= form_tag submit_path, :method => :get do
+  %table.table-talkers
+    %thead
+      %tr
+        %th= params['show']
+        %th
+        %th
+        -if session[:logged_in] 
+          %th
+    %tbody
+      - @talkers.each do |talker|
+        %tr
+          %td= check_box_tag "checked[#{talker.id}]", 1, @checked.include?(talker) ? "checked" : false
+          %td
+            %div.producer= talker.producer
+          %td
+            %div.product= talker.product
+            %div.blurb= talker.blurb
+          -if session[:logged_in]
+            %td
+              %button.btn-link{:name => "edit["+talker.id.to_s+"]"}
+                Edit
+      .footer
+        .footer-content
+          = submit_tag 'Print selected talkers', :class => 'btn btn-success'
+          -if session[:logged_in]
+            = submit_tag "Delete selected talkers", :class => 'btn btn-menu', data: { confirm: 'Are you sure you want to delete the selected talkers?' }
+            = submit_tag "New talker", :class => 'btn btn-menu'
+          -else
+            %button.btn.btn-menu{:name => 'login'}
+              Admin

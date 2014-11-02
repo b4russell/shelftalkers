@@ -1,0 +1,150 @@
+// Place all the styles related to the Talkers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: "FontAwesome";
+  src: asset-url('fontawesome-webfont.eot', font);
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, td {
+  font-size:small;
+  font-family:"Helvetica", Verdana, sans-serif;
+}
+
+.formbody {
+  max-width: 800;
+  margin: auto;
+}
+
+.container-fluid{
+  max-width: 800px;
+  margin: auto;
+  margin-top: 3.5em;
+  margin-bottom: 2.0em;
+}
+
+p {
+  font-family:"Helvetica", Verdana, sans-serif;
+}
+
+.table-talkers {
+  border-collapse:collapse;
+  border: 5px solid black;
+  max-width: 800px;
+  margin: auto;
+ th {
+    vertical-align: bottom;
+    height: 2em;
+    border-bottom: 1px dashed black;
+  } 
+  tr {
+    border:none;
+    &:hover {
+      .btn-link {
+        visibility:visible;
+      }
+    }
+  }
+  td {
+    &.product { 
+      font-weight:bold; }
+    border-bottom: 1px solid;
+    border-color: lightgray;
+    padding: 0.5em;
+    vertical-align: top;
+  }
+  div {
+    &.product {
+      font-weight: bold;
+    }
+  }
+
+.btn-link {
+  color: black;
+  visibility:hidden;
+}
+  
+}
+  
+.footer {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3em;
+    background-color: #fff;
+    border-top: 1px solid;
+    border-color: #888888; 
+    box-shadow: 0px 0px 2px #888888;
+    overflow: hidden;
+  ul
+  {
+    list-style-type:none;
+    margin-left:0.75em;
+    margin-right:0.75em;
+    padding:0.5em;
+  }
+  .btn {
+    margin: 0.5em;
+  }
+  .btn-success {
+    float: left;
+  }
+  .btn-menu {
+    float: right;
+  }
+  .footer-content {
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+
+.header {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3em;
+    background-color: #fff;
+    border-color: #888888; 
+    white-space: nowrap;
+    overflow:hidden;
+  .title-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 1em;
+    text-align:left;
+  }
+  span{
+    &.title, &.company {
+      font-size: 2em;
+      color: black;
+      text-align: left;
+      text-transform:uppercase;
+    }
+    &.title {
+      font-weight: bold;}
+  }
+  ul
+  {
+    padding:0em;
+  li {
+    display: inline;
+ }
+  }
+  a {
+    &:link,&:visited {
+      text-decoration:none;
+    }
+    &:hover{
+      color: #333;
+    }
+  }
+  
+}  
+
+

@@ -1,0 +1,8 @@
+
+%h4= @talker.producer
+%h3= @talker.product
+%p= @talker.blurb
+
+= link_to 'PDF', params.merge(:format => :pdf)
+= link_to 'Back', talkers_path
+= link_to 'Edit', edit_talker_path(@talker)

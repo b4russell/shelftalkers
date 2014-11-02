@@ -1,0 +1,18 @@
+%table
+  - @talkerpairs.each do |talkerpair|
+    %tr
+      - talkerpair.each do |talker|
+        %td
+          %table.pdf
+            %thead
+              %tr 
+                %th fold
+            %tbody
+              %tr
+                %td.producer= talker.producer
+              %tr
+                %td.product= talker.product
+              %tr
+                %td= talker.blurb
+
+= link_to("PDF", print_path(:checked => params[:checked], :format => :pdf))

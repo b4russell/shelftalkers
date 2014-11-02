@@ -1,0 +1,28 @@
+<div class="formbody">
+<%= form_for(@talker) do |f| %>
+  <% if @talker.errors.any? %>
+    <div class = "alert alert-error">
+      <%= pluralize(@talker.errors.count, "error") %> prevented this talker from being saved:
+
+      <ul>
+      <% @talker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset> 
+    <legend><%= @title%></legend>
+      <%= f.label :producer %>
+      <%= f.text_field :producer, :class => "input-xlarge" %>
+      <%= f.label :product %>
+      <%= f.text_field :product, :class => "input-xlarge"  %>
+      <%= f.label :blurb %>
+      <%= f.text_area :blurb, :class => "input-xlarge", :rows => "7" %>
+    <div class="form-actions">
+      <%= f.submit :class => "btn btn-primary"%>
+      <%= link_to 'Cancel', talkers_path(@talker.nil? ? nil : :anchor => "checked_"+@talker.id.to_s), :class => "btn" %>
+    </div>
+  </fieldset>
+<% end %>
+</div>

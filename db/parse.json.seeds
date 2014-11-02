@@ -1,0 +1,4 @@
+talkers = JSON.parse(File.read('talkers.json'))
+talkers.each do |talker|
+  Talker.create!(talker)
+end
