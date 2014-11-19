@@ -1,6 +1,10 @@
 class TalkersController < ApplicationController
 
-  require_relative 'constants'
+  if File.file?('constants.rb')
+    require_relative 'constants'
+  else
+    USER_ID, PASSWORD = 'admin', 'test'
+  end
 
   before_filter :authenticate, :only => [ :edit, :destroy, :new, :update, :create, :login] 
   # GET /talkers
